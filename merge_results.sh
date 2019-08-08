@@ -7,7 +7,7 @@
 #pwg-NLO-n.top dove n è il numero relativo alla n-esima simulazione
 #pwgpwhgalone-output-n.top dove n è il numero relativo alla n-esima simulazione
 MYDIR=/home/davidebadalotti/Tesi/
-risultati=${MYDIR}run-test
+risultati=$(pwd)
 merged=${risultati}/merged
 mkdir -p ${merged}
 #controllo che gli argomenti siano dati correttamente, deve essere presente il numero di simulazioni
@@ -19,7 +19,7 @@ then
 
 
   for ((ngraph=0; ngraph<70; ++ngraph)) do
-
+    echo ${ngraph}
     #stampa il titolo del grafico sui file -merged.top
     grep "index\s\{2,3\}${ngraph}\b" ${risultati}/pwg-NLO-1.top >> ${merged}/pwg-NLO-merged.top
     grep "index\s\{2,3\}${ngraph}\b" ${risultati}/pwgpwhgalone-output-1.top >> ${merged}/pwgpwhgalone-output-merged.top
